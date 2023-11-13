@@ -1,4 +1,4 @@
-package PageObjects.IndividualCover;
+package PageObjects.FamilyCover;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LumpSumCover15000 extends PageObject {
+public class LumpSumCover5000 extends PageObject {
     String Url = "https://shambawebtest.clientele.co.za/shambaweb/login";
 
     String LoginBtn = "//*[@id=\"navbarSupportedContent\"]/div/div/button/span";
