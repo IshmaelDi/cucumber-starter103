@@ -38,10 +38,11 @@ public class LumpSumCover15000Step extends PageObject {
     }
     @Then("DOB")
     public void dob() throws InterruptedException {
+        Thread.sleep(2000);
 
         lumpSumCover15000.GetRatesBtn();
         lumpSumCover15000.SelectPlanOption();
-        lumpSumCover15000.SelectDoB("2021-12-08");
+        lumpSumCover15000.SelectDoB("2008-12-08");
 
     }
     @Then("Cover Amount")
@@ -57,8 +58,8 @@ public class LumpSumCover15000Step extends PageObject {
         lumpSumCover15000.EnterSurname("Mills");
         lumpSumCover15000.selectSACitizen("Yes");
         lumpSumCover15000.clickTextBox();
-        lumpSumCover15000.enterID("1811086512604");
-        lumpSumCover15000.confirmID("1811086512604");
+        lumpSumCover15000.enterID("0812126958121");
+        lumpSumCover15000.confirmID("0812126958121");
         lumpSumCover15000.clickOKButton();
         lumpSumCover15000.EnterDoB("2022-06-03");
         lumpSumCover15000.selectMonthlyIncome("Up to 3,000");

@@ -291,6 +291,7 @@ public class LumpSumCover15000 extends PageObject {
 
     @Step("Click on Main life DoB text field and select dates")
     public void SelectDoB(String DOB)throws InterruptedException{
+
         Thread.sleep(5000);
 
         WebElement DoB =  $(By.xpath(MainLifeDoB) );
@@ -495,7 +496,7 @@ public class LumpSumCover15000 extends PageObject {
 
     @Step("Click on Validate button")
     public void clickValidateBtn()throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
         WebElement element = $(By.xpath(ValidateBtnXpath));
 
