@@ -18,7 +18,8 @@ public class LumpSumCover5000Step extends PageObject {
 
 
         lumpSumCover5000.OpenWebsite();
-        lumpSumCover5000.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
+        lumpSumCover5000.clickOnArrowButton();
+        lumpSumCover5000.loginIn("idirero", "Ish@cyest#2003");
         lumpSumCover5000.ClienteleLogo();
         lumpSumCover5000.CaptureSale();
         lumpSumCover5000.LeadBasket();
@@ -90,11 +91,31 @@ public class LumpSumCover5000Step extends PageObject {
         lumpSumCover5000.OKButton();
         lumpSumCover5000.enterMobiNum("0601234230");
         lumpSumCover5000.isEmployee("No");
+        lumpSumCover5000.EmployeeNumber();
+        lumpSumCover5000.Department("GAUTENG HEALTH");
+        lumpSumCover5000.DeductionAuthorised("Yes");
         lumpSumCover5000.confCheckBoxes();
         lumpSumCover5000.clickSaveBtn();
+        lumpSumCover7500.navigateSpouse();
+        lumpSumCover7500.SpouseTitle("Mr");
+        lumpSumCover7500.SpouseName("Leeto");
+        lumpSumCover7500.spouseSurname("Tom");
+        lumpSumCover7500.SelectSpouseGender("Male");
+        lumpSumCover7500.SpouseIDNumber("8711096790062");
+        lumpSumCover7500.SaveSpouse();
+        lumpSumCover7500.NavigateChild();
+        lumpSumCover7500.addChild();
+        lumpSumCover7500.EnterChildName("Nomsa");
+        lumpSumCover7500.childSurname("Pheko");
+        lumpSumCover7500.childGen("Female");
+        lumpSumCover7500.ChildIDNumber("1811086174207");
+        lumpSumCover7500.ChildIsStudent("No");
+        lumpSumCover7500.SAVEChild();
     }
     @Then("Complete Sales")
     public void complete_sales() throws InterruptedException {
+
+
 
 
         lumpSumCover5000.navigateBeneficiary();

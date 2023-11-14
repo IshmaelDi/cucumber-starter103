@@ -4,24 +4,17 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
 public class LumpSumCover5000 extends PageObject {
     String Url = "https://shambawebtest.clientele.co.za/shambaweb/login";
-
-    String LoginBtn = "//*[@id=\"navbarSupportedContent\"]/div/div/button/span";
-    String UserName = "//*[@id=\"i0116\"]";
-
-    String NextBtn = "//*[@id=\"idSIButton9\"]";
-
-    String Password = "//*[@id=\"i0118\"]";
-
-    String SignIn = "//*[@id=\"idSIButton9\"]";
 
     String ClienteleLogoXpath = "//img[@class=\"logo-menu\"]";
 
@@ -35,16 +28,34 @@ public class LumpSumCover5000 extends PageObject {
 
     String ActionSaleBtn = "(//i[@class='bi bi-cash-coin'])[1]";
 
+
+
+
     String HELPProductXpath = "//img[@src='assets/Help.png']";
 
     String PlanTypeDropdown = "//select[@formcontrolname=\"plan\" ]";
 
     String SelectPlanOkBtn = "//button[@class=\"btn btn-success\"]";
 
+
+
+
+
     String GetRatesBtn = "//button[@class='mat-focus-indicator mat-flat-button mat-button-base mat-primary']";
 
     String PlanOptionXpath = "//select[@formcontrolname=\"planOption\"]";
+
+
+
+
     String MainLifeDoB = "//input[@type='text']";
+
+    String SpouseDOBXpath = "(//button[@class='mat-focus-indicator mat-flat-button mat-button-base mat-primary'])[2]";
+    String SpouseInputDOBXpath = "(//input[@class='input-control ng-pristine ng-valid ng-touched'])[1]";
+
+
+
+
 
     String SliderBarXpath = "//span[@class='ngx-slider-span ngx-slider-bar-wrapper ngx-slider-full-bar']";
 
@@ -128,7 +139,19 @@ public class LumpSumCover5000 extends PageObject {
 
     String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
 
+
+
+
+
+
     String EmpStatusXpath = "//select[@id='IsEmployee']";
+    String EmployeeNumberXpath = "(//input[@id='EmployeeNumber'])[1]";
+    String DepartmentXpath = "(//select[@id='Department'])[1]";
+    String DeductionAuthorisedXpath = "(//select[@id='Authorised'])[1]";
+
+
+
+
 
     String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
 
@@ -163,6 +186,36 @@ public class LumpSumCover5000 extends PageObject {
 
 
 
+    // Spouse Logic
+
+    String SpouseTitleXpath  = "//*[@id=\"Title\"]";
+
+    String NamesXpath  = "//*[@id=\"FirstNames\"]";
+
+    String SurnamesXpath  = "//*[@id=\"Surname\"]";
+
+    String GenderXpath  = "//*[@id=\"Gender\"]";
+
+    String IDNumbersXpath = "//*[@id=\"IdentityNumber\"]";
+
+    String SaveSpouse = "//button[@class='btn btn-success']";
+
+
+    String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
+
+    String EmpStatusXpath = "//select[@id='IsEmployee']";
+
+
+    // Elements for New Login
+
+    String UserNameXpath = "//input[@placeholder='Username']";
+    String PasswordXpath = "//input[@placeholder='Password']";
+    String LogButtonXpath = "//button[@type='submit']//span[contains(text(),'Login')]";
+    String NavigationButtonXpath = "/html/body/shamba-root/shamba-layout/div/div[1]/shamba-header/div/div/div[2]/shamba-auth/div/nav";
+
+
+
+
 
 
     @Step("Open shamba website")
@@ -173,130 +226,96 @@ public class LumpSumCover5000 extends PageObject {
 
     }
 
+    @Step("Click on Navigation Arrow Button")
+    public void clickOnArrowButton(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(13));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NavigationButtonXpath))).click();
+
+
+
+    }
+
     @Step("Login in using valid Credentials")
     public void loginIn(String Username, String password) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(13));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LoginBtn))).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserName))).sendKeys(Username);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NextBtn))).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Password))).sendKeys(password);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SignIn))).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserNameXpath))).sendKeys(Username);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PasswordXpath))).sendKeys(password);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LogButtonXpath))).click();
 
 
     }
 
     @Step("Clicks on ClienteleLogo")
     public void ClienteleLogo() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         $(By.xpath(ClienteleLogoXpath)).click();
-
-
     }
-
     @Step("Clicks on CaptureSale")
     public void CaptureSale() throws InterruptedException {
         Thread.sleep(5000);
-
         $(By.xpath(CaptureSaleXpath)).click();
-
     }
-
-
     @Step("Clicks on LeadBasket")
     public void LeadBasket() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         $(By.xpath(LeadBasketXpath)).click();
-
     }
-
     @Step("Select New on lead basket filter ")
     public void selectNew()throws InterruptedException{
-        Thread.sleep(2000);
-
+        Thread.sleep(1000);
         $(By.xpath(LeadBasketFilterXpath)).click();
     }
-
     @Step("Select a lead to action a sale")
     public void LeadCheckBox() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         WebElement checkbox = $(By.xpath(leadCheckBox));
-
         if (!checkbox.isSelected()) {
             checkbox.click();
         }
-
-
     }
-
     @Step("Click on Action sale Button")
     public void ActionSaleButton() throws InterruptedException {
         Thread.sleep(5000);
-
         WebElement startSale = $(By.xpath(ActionSaleBtn));
-
         if (!startSale.isSelected()) {
             startSale.click();
         }
-
     }
-
     @Step("Click on Help Icon Button")
     public void HelpIconButton() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         $(By.xpath(HELPProductXpath)).click();
     }
-
     @Step("Click on Select Plan Text Dropdown and select Life Plan")
     public void SelectPlanTextDropdown(String SelectPlan) throws InterruptedException {
         Thread.sleep(5000);
-
         WebElement dropdown = $(By.xpath(PlanTypeDropdown));
         Select selectObject = new Select(dropdown);
-
         selectObject.selectByValue(SelectPlan);
-
     }
-
     @Step("Click on Ok Button to proceed")
     public void SelectPlanOkBtn() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         $(By.xpath(SelectPlanOkBtn)).click();
-
     }
-
     @Step("Click on Get Rates Button")
     public void GetRatesBtn() throws InterruptedException {
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         $(By.xpath(GetRatesBtn)).click();
     }
-
-
     @Step("Click on Plan Option and select Cover")
     public void SelectPlanOption() {
-
         WebElement dropdown = $(By.xpath(PlanOptionXpath));
         Select selectObject = new Select(dropdown);
-
         selectObject.selectByVisibleText("Individual");
-
-
     }
-
     @Step("Click on Main life DoB text field and select dates")
     public void SelectDoB(String DOB)throws InterruptedException{
-        Thread.sleep(5000);
-
+        Thread.sleep(1000);
         WebElement DoB =  $(By.xpath(MainLifeDoB) );
-
         DoB.click();
-
         DoB.sendKeys(DOB + Keys.ENTER);
 
 
@@ -304,25 +323,25 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select cover amount of R15000 on the slider bar")
     public void selectCoverAmount()throws InterruptedException{
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         $(By.xpath(SliderBarXpath)).click();
 
-        WebElement sliderPointer = $(By.xpath("//span[@aria-label='ngx-slider']"));
+        WebElement sliderPointer = $(By.xpath("//span[@aria-label='ngx-slider'])[1]"));
         sliderPointer.click();
 
     }
 
     @Step("Click on view button to proceed with quotes")
     public void ViewRates()throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         $(By.xpath(ViewRates)).click();
     }
 
     @Step("Click on Start Sale Button")
     public void StartSale()throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         $(By.xpath(StartSale)).click();
 
@@ -341,7 +360,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Tittle type from dropdown")
     public void selectTittleDropdown(String Tittle)throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(1000);
 
         WebElement dropdown = $(By.xpath(TittleXpath));
         Select selectObject = new Select(dropdown);
@@ -504,6 +523,9 @@ public class LumpSumCover5000 extends PageObject {
         button.click();
     }
 
+
+    // Payer Details Logic
+
     @Step("Navigate Payer page")
     public void navigatePayer()throws InterruptedException{
         Thread.sleep(5000);
@@ -665,9 +687,28 @@ public class LumpSumCover5000 extends PageObject {
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(PayerIsEmployee);
-
     }
 
+    @Step("Enter Employee Number")
+    public void EmployeeNumber(){
+        $(By.xpath(EmployeeNumberXpath)).sendKeys("84752807");
+    }
+    @Step("Select Department from DropList")
+    public void Department(String GAUTENGHEALTH){
+        WebElement D = $(By.xpath(DepartmentXpath));
+        Select selectObject = new Select(D);
+
+        selectObject.selectByValue(GAUTENGHEALTH);
+    }
+
+    @Step("Select Deduction Authorised from Drop List")
+    public void DeductionAuthorised(String Deduction){
+        WebElement De = $(By.xpath(DeductionAuthorisedXpath));
+        Select selectObject = new Select(De);
+
+        selectObject.selectByValue(Deduction);
+
+    }
     @Step("Select All checkboxes for confirmations of a Payer ")
     public void confCheckBoxes(){
         WebElement checkbox = $(By.xpath(ConfirmCheckBoxXpath));
@@ -689,6 +730,44 @@ public class LumpSumCover5000 extends PageObject {
         WebElement button = $(By.xpath(SavePayerXpath));
         button.click();
 
+    }
+
+
+    @Step("Select the spouse title")
+    public void SpouseTitle(String SpouseTitle){
+        WebElement St =$(By.xpath(SpouseTitleXpath ));
+        selectFromDropdown(St,SpouseTitle);
+
+    }
+    @Step("Enter spouse name")
+    public void SpouseName(String SpouseName){
+        $(By.xpath(NamesXpath)).sendKeys(SpouseName);
+    }
+
+    @Step("enter spouse surname")
+    public void spouseSurname(String SpouseSurname){
+        $(By.xpath(SurnameXpath )).sendKeys(SpouseSurname);
+    }
+
+
+
+    @Step("select spouse gender")
+    public void SelectSpouseGender(String SpouseGender){
+        Select product = new Select(getDriver().findElement(By.xpath(GenderXpath )));
+        product.selectByValue(SpouseGender);
+
+
+    }
+    @Step("Enter ID number")
+    public void SpouseIDNumber(String EnterIDNumber){
+        $(By.xpath(IDNumberXpath)).sendKeys(EnterIDNumber);
+    }
+
+
+    @Step("Save Spouse ")
+    public  void SaveSpouse() throws InterruptedException {
+        Thread.sleep(3000);
+        $(By.xpath(SaveSpouse)).click();
     }
 
 
