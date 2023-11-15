@@ -96,7 +96,7 @@ public class LumpSumCover5000Step extends PageObject {
         lumpSumCover5000.DeductionAuthorised("Yes");
         lumpSumCover5000.confCheckBoxes();
         lumpSumCover5000.clickSaveBtn();
-        lumpSumCover7500.navigateSpouse();
+        lumpSumCover5000.
         lumpSumCover7500.SpouseTitle("Mr");
         lumpSumCover7500.SpouseName("Leeto");
         lumpSumCover7500.spouseSurname("Tom");

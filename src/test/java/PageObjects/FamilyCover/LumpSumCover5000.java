@@ -65,41 +65,49 @@ public class LumpSumCover5000 extends PageObject {
 
     String FAISXpath = "//button[normalize-space()='Continue']";
 
-    String TittleXpath = "//select[@id='Title']";
+    String MainMemberTittleXpath = "//select[@id='Title']";
 
-    String NameXpath = "//input[@id='FirstNames']";
+    String MainMemberNameXpath = "//input[@id='FirstNames']";
 
-    String SurnameXpath = "//input[@id='Surname']";
+    String MainMemberSurnameXpath = "//input[@id='Surname']";
 
-    String SACitizenXpath = "//select[@id='IsSouthAfricanCitizen']";
+    String MainMemberSACitizenXpath = "//select[@id='IsSouthAfricanCitizen']";
 
-    String IDNumberXpath = "//input[@id='IdentityNumber']";
+    String MainMemberIDNumberXpath = "//input[@id='IdentityNumber']";
 
-    String MainInputID ="//input[@id='mainInput']";
+    String MainMemberMainInputID ="//input[@id='mainInput']";
 
-    String ConfirmID = "//input[@id='confirmationInput']";
+    String MainMemberConfirmID = "//input[@id='confirmationInput']";
 
-    String OKButton = "//span[normalize-space()='Ok']";
+    String MainMemberOKButton = "//span[normalize-space()='Ok']";
+
+
+    // Spouse Element
 
     String DoBXpath = "//input[@id='DateOfBirth']";
 
-    String MonthlyIncomeXpath = "//select[@id='MonthlyIncomeRange']";
+    String MainMemberMonthlyIncomeXpath = "//select[@id='MonthlyIncomeRange']";
 
-    String OccupationXpath = "//select[@id='Occupation']";
+    String MainMemberOccupationXpath = "//select[@id='Occupation']";
 
-    String EducationXpath = "//select[@id='EducationLevel']";
+    String MainMemberEducationXpath = "//select[@id='EducationLevel']";
 
-    String CellNumberXpath = "//input[@id='MobileTelephoneNumber']";
+    String MainMemberCellNumberXpath = "//input[@id='MobileTelephoneNumber']";
 
-    String PostalAddressXpath = "//*[@id=\"PostalAddressLine1\"]";
+    String MainMemberPostalAddressXpath = "//*[@id=\"PostalAddressLine1\"]";
 
-    String PostalCodeXpath = "//input[@id='PostalAddressCode']";
+    String MainMemberPostalCodeXpath = "//input[@id='PostalAddressCode']";
 
-    String CopyPhysicalXpath = "//*[@id=\"ngb-nav-0-panel\"]/div[1]/div/div/button";
+    String MainMemberCopyPhysicalXpath = "//*[@id=\"ngb-nav-0-panel\"]/div[1]/div/div/button";
 
-    String ValidateBtnXpath = "//*[@id=\"pills-tabContent\"]/member/div/div[1]/div/form/div/div[2]/div[5]/div/shamba-address/div/div[2]/div[3]/div/button/span";
+    String MainMemberValidateBtnXpath = "//*[@id=\"pills-tabContent\"]/member/div/div[1]/div/form/div/div[2]/div[5]/div/shamba-address/div/div[2]/div[3]/div/button/span";
 
     String SaveMainMemberXpath = "//*[@id=\"pills-tabContent\"]/member/div/div[2]/div/div[2]/button";
+
+
+
+
+    // Payer Details Elements
 
     String PayerXpath ="/html/body/shamba-root/shamba-layout/div/div[2]/sale/div/div[2]/div/app-sale-capture/div/div/div/div/div[2]/sale-capture-control/div/div[1]/div/ul/li[2]/div[2]";
 
@@ -111,38 +119,44 @@ public class LumpSumCover5000 extends PageObject {
 
     String PayerIDXpath = "//input[@id='IdentityNumber']";
 
-    String MainIDXpath = "//input[@id='mainInput']";
+    String PayerDetailsMainIDXpath = "//input[@id='mainInput']";
 
-    String ConfirmIDXpath = "//input[@id='confirmationInput']";
+    String PayerDetailsConfirmIDXpath = "//input[@id='confirmationInput']";
 
-    String OKPopUpXpath = "//div[@class='cdk-global-overlay-wrapper']//div[2]//button[1]";
+    String PayerDetailsOKPopUpXpath = "//div[@class='cdk-global-overlay-wrapper']//div[2]//button[1]";
 
     String PayerRelationXpath = "//select[@id='RelationToMember']";
 
     String PayerDebitXpath = "//select[@id='DebitDay']";
 
-    String FirstDebitXpath = "//select[@id='FirstDebitDate']";
+    String PayerDetailsFirstDebitXpath = "//select[@id='FirstDebitDate']";
 
-    String BankNameXpath = "//select[@id='BankName']";
+    String PayerDetailsBankNameXpath = "//select[@id='BankName']";
 
-    String BranchCodeXpath = "//select[@id='BankBranchCode']";
+    String PayerDetailsBranchCodeXpath = "//select[@id='BankBranchCode']";
 
-    String AcctTypeXpath = "//select[@id='BankAccountType']";
+    String PayerDetailsAcctTypeXpath = "//select[@id='BankAccountType']";
 
-    String BankAccNumXpath = "//input[@id='BankAccountNumber']";
+    String PayerDetailsBankAccNumXpath = "//input[@id='BankAccountNumber']";
 
-    String AccountXpath = "//input[@id='mainInput']";
+    String PayerDetailsAccountXpath = "//input[@id='mainInput']";
 
-    String ConfAccXpath = "//input[@id='confirmationInput']";
+    String PayerDetailsConfAccXpath = "//input[@id='confirmationInput']";
 
-    String OKButtonXpath = "//div[@class='cdk-global-overlay-wrapper']//div[2]//button[1]";
-
-    String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
+    String PayerDetailsOKButtonXpath = "//div[@class='cdk-global-overlay-wrapper']//div[2]//button[1]";
 
 
+    String PayerDetailsMobileNumXpath = "//input[@id='MobileTelephoneNumber']";
+
+    String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
+
+    String CheckBox1Xpath = "(//input[@type='checkbox'])[2]";
+
+    String SavePayerXpath = "//button[@class='btn btn-success']";
 
 
 
+    // Government Details
 
     String EmpStatusXpath = "//select[@id='IsEmployee']";
     String EmployeeNumberXpath = "(//input[@id='EmployeeNumber'])[1]";
@@ -152,15 +166,7 @@ public class LumpSumCover5000 extends PageObject {
 
 
 
-
-    String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
-
-    String CheckBox1Xpath = "(//input[@type='checkbox'])[2]";
-
-    String SavePayerXpath = "//button[@class='btn btn-success']";
-
-    String SpouseXpath = "/html/body/shamba-root/shamba-layout/div/div[2]/sale/div/div[2]/div/app-sale-capture/div/div/div/div/div[2]/sale-capture-control/div/div[1]/div/ul/li[3]/div[2]";
-
+    String AddChildXpath = "//button[@class='mat-focus-indicator mat-flat-button mat-button-base mat-primary']";
     String ChildXpath = "/html/body/shamba-root/shamba-layout/div/div[2]/sale/div/div[2]/div/app-sale-capture/div/div/div/div/div[2]/sale-capture-control/div/div[1]/div/ul/li[4]/div[2]";
 
     String BeneficiaryXpath = "/html/body/shamba-root/shamba-layout/div/div[2]/sale/div/div[2]/div/app-sale-capture/div/div/div/div/div[2]/sale-capture-control/div/div[1]/div/ul/li[5]/div[2]";
@@ -184,26 +190,41 @@ public class LumpSumCover5000 extends PageObject {
     String SummaryTableXpath = "//table[@id='bootstrap-table']";
 
 
-
-
     // Spouse Logic
 
     String SpouseTitleXpath  = "//*[@id=\"Title\"]";
 
-    String NamesXpath  = "//*[@id=\"FirstNames\"]";
+    String SpouseNamesXpath  = "//*[@id=\"FirstNames\"]";
 
-    String SurnamesXpath  = "//*[@id=\"Surname\"]";
+    String SpouseSurnamesXpath  = "//*[@id=\"Surname\"]";
 
-    String GenderXpath  = "//*[@id=\"Gender\"]";
+    String SpouseGenderXpath  = "//*[@id=\"Gender\"]";
 
-    String IDNumbersXpath = "//*[@id=\"IdentityNumber\"]";
+    String SpouseIDNumbersXpath = "//*[@id=\"IdentityNumber\"]";
 
-    String SaveSpouse = "//button[@class='btn btn-success']";
+    String SaveSpouseXpath = "//button[@class='btn btn-success']";
 
 
     String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
 
-    String EmpStatusXpath = "//select[@id='IsEmployee']";
+
+
+    // Child Logic and elements
+
+    String AddChildBtnXpath = "//span[@class='title']";
+
+    String childNameXpath = "//input[@id=\"FirstNames\"]";
+
+    String childSurNameXpath = "//input[@id=\"Surname\"]";
+
+    String childGenderXpath = "//select[@id=\"Gender\"]";
+
+    String childIDnumberXpath = "//*[@id=\"IdentityNumber\"]";
+
+    String ChildisStudentXpath = "//select[@id=\"IsStudent\"]";
+
+    String saveChildBtnXpath = "//button[@type='button']";
+
 
 
     // Elements for New Login
@@ -223,18 +244,12 @@ public class LumpSumCover5000 extends PageObject {
         getDriver().get(Url);
         getDriver().manage().window().maximize();
         Thread.sleep(3000);
-
     }
-
     @Step("Click on Navigation Arrow Button")
     public void clickOnArrowButton(){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(13));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NavigationButtonXpath))).click();
-
-
-
     }
-
     @Step("Login in using valid Credentials")
     public void loginIn(String Username, String password) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(13));
@@ -243,10 +258,7 @@ public class LumpSumCover5000 extends PageObject {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserNameXpath))).sendKeys(Username);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PasswordXpath))).sendKeys(password);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LogButtonXpath))).click();
-
-
     }
-
     @Step("Clicks on ClienteleLogo")
     public void ClienteleLogo() throws InterruptedException {
         Thread.sleep(1000);
@@ -317,20 +329,39 @@ public class LumpSumCover5000 extends PageObject {
         WebElement DoB =  $(By.xpath(MainLifeDoB) );
         DoB.click();
         DoB.sendKeys(DOB + Keys.ENTER);
-
-
     }
 
-    @Step("Select cover amount of R15000 on the slider bar")
-    public void selectCoverAmount()throws InterruptedException{
+    @Step("Select cover amount of R5000 on the slider bar")
+    public void selectCoverAmountR5000()throws InterruptedException{
         Thread.sleep(1000);
 
         $(By.xpath(SliderBarXpath)).click();
 
         WebElement sliderPointer = $(By.xpath("//span[@aria-label='ngx-slider'])[1]"));
         sliderPointer.click();
-
     }
+
+    @Step("Select cover amount of R10000 on the slider bar")
+    public void selectCoverAmountR10000()throws InterruptedException{
+        Thread.sleep(1000);
+
+        $(By.xpath(SliderBarXpath)).click();
+
+        WebElement sliderPointer = $(By.xpath("//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[2]"));
+        sliderPointer.click();
+    }
+    @Step("Select cover amount of R10000 on the slider bar")
+    public void selectCoverAmountR10000()throws InterruptedException{
+        Thread.sleep(1000);
+
+        $(By.xpath(SliderBarXpath)).click();
+
+        WebElement sliderPointer = $(By.xpath("//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[2]"));
+        sliderPointer.click();
+    }
+
+
+
 
     @Step("Click on view button to proceed with quotes")
     public void ViewRates()throws InterruptedException {
@@ -362,7 +393,7 @@ public class LumpSumCover5000 extends PageObject {
     public void selectTittleDropdown(String Tittle)throws InterruptedException{
         Thread.sleep(1000);
 
-        WebElement dropdown = $(By.xpath(TittleXpath));
+        WebElement dropdown = $(By.xpath(PayerTittleXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(Tittle);
@@ -371,7 +402,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Enter Name(s) on input field text")
     public void EnterName(String Name){
 
-        WebElement fieldText = $(By.xpath(NameXpath));
+        WebElement fieldText = $(By.xpath(PayerNameXpath));
         fieldText.click();
         fieldText.sendKeys(Name);
 
@@ -379,7 +410,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Enter Surname on input field text")
     public void EnterSurname(String Surname){
-        WebElement fieldText = $(By.xpath(SurnameXpath));
+        WebElement fieldText = $(By.xpath(PayerSurnameXpath));
         fieldText.click();
         fieldText.sendKeys(Surname);
     }
@@ -769,6 +800,56 @@ public class LumpSumCover5000 extends PageObject {
         Thread.sleep(3000);
         $(By.xpath(SaveSpouse)).click();
     }
+
+
+    @Step("Enter child name")
+    public void EnterChildName(String ChildName) {
+        $(By.xpath(childName)).sendKeys(ChildName);
+
+
+    }
+
+    @Step("Add a child ")
+    public void addChild(){
+        $(By.xpath(AddChildBtn)).click();
+    }
+
+    @Step("Enter a child surname")
+    public void childSurname(String childSurName ){
+        $(By.xpath(childSurNameXpath)).sendKeys(childSurName);
+    }
+
+
+    @Step("Select gender for a child")
+    public void childGen(String ChildGender){
+        WebElement Cg = $(By.xpath(childGender));
+        selectFromDropdown(Cg,ChildGender);
+
+
+    }
+
+
+    @Step( "Enter child ID Number")
+    public void ChildIDNumber(String ChildIDNumber){
+        $(By.xpath(childIDnumber)).sendKeys(ChildIDNumber);
+    }
+
+
+    @Step("select whether child is a student or not")
+    public void ChildIsStudent(String  ChildStudent){
+        WebElement Cs = $(By.xpath(ChildisStudent));
+        selectFromDropdown(Cs,ChildStudent);
+
+
+    }
+
+    @Step("Save child details")
+    public void SAVEChild() throws InterruptedException {
+        Thread.sleep(5000);
+        $(By.xpath(saveChildBtn)).click();
+    }
+
+
 
 
     @Step("Navigate to Beneficiary Page")
