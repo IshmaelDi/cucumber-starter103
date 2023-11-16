@@ -47,7 +47,7 @@ public class LumpSumCover5000Step extends PageObject {
     @Then("Cover Amount {string}, {string}")
     public void cover_amount(String string, String string2) throws InterruptedException {
 
-        lumpSumCover5000.selectCoverAmount();
+        lumpSumCover5000.selectCoverAmountR5000();
         lumpSumCover5000.ViewRates();
         lumpSumCover5000.StartSale();
         lumpSumCover5000.handleModelPopUp();
@@ -96,27 +96,25 @@ public class LumpSumCover5000Step extends PageObject {
         lumpSumCover5000.DeductionAuthorised("Yes");
         lumpSumCover5000.confCheckBoxes();
         lumpSumCover5000.clickSaveBtn();
-        lumpSumCover5000.
-        lumpSumCover7500.SpouseTitle("Mr");
-        lumpSumCover7500.SpouseName("Leeto");
-        lumpSumCover7500.spouseSurname("Tom");
-        lumpSumCover7500.SelectSpouseGender("Male");
-        lumpSumCover7500.SpouseIDNumber("8711096790062");
-        lumpSumCover7500.SaveSpouse();
-        lumpSumCover7500.NavigateChild();
-        lumpSumCover7500.addChild();
-        lumpSumCover7500.EnterChildName("Nomsa");
-        lumpSumCover7500.childSurname("Pheko");
-        lumpSumCover7500.childGen("Female");
-        lumpSumCover7500.ChildIDNumber("1811086174207");
-        lumpSumCover7500.ChildIsStudent("No");
-        lumpSumCover7500.SAVEChild();
+
+        lumpSumCover5000.SpouseTitle("Mr");
+
+        lumpSumCover5000.SpouseName("Kabelo");
+        lumpSumCover5000.SpouseSurname("Direro");
+        lumpSumCover5000.SelectSpouseGender("Female");
+        lumpSumCover5000.SpouseIDNumber("8705076328083");
+        lumpSumCover5000.SaveSpouse();
+        lumpSumCover5000.AddChild();
+        lumpSumCover5000.EnterChildName("Lobby");
+        lumpSumCover5000.selectBranch("Seekers");
+        lumpSumCover5000.childGenderXpath("Female");
+        lumpSumCover5000.ChildIDNumber("8705076328083");
+        lumpSumCover5000.ChildIsStudent("Yes");
+        lumpSumCover5000.SAVEChild();
+
     }
     @Then("Complete Sales")
     public void complete_sales() throws InterruptedException {
-
-
-
 
         lumpSumCover5000.navigateBeneficiary();
         lumpSumCover5000.addBeneficiary();

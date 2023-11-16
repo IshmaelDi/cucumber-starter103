@@ -50,14 +50,15 @@ public class LumpSumCover5000 extends PageObject {
 
     String MainLifeDoB = "//input[@type='text']";
 
-    String SpouseDOBXpath = "(//button[@class='mat-focus-indicator mat-flat-button mat-button-base mat-primary'])[2]";
-    String SpouseInputDOBXpath = "(//input[@class='input-control ng-pristine ng-valid ng-touched'])[1]";
-
-
-
-
-
     String SliderBarXpath = "//span[@class='ngx-slider-span ngx-slider-bar-wrapper ngx-slider-full-bar']";
+    String R5000Xpath = "//span[@aria-label='ngx-slider'])[1]";
+    String R10000Xpath = "//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[2]";
+    String R15000Xpath = "//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[3]";
+    String R20000Xpath = "//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[4]";
+
+
+
+
 
     String ViewRates = "//span[@class='title']";
 
@@ -82,7 +83,7 @@ public class LumpSumCover5000 extends PageObject {
     String MainMemberOKButton = "//span[normalize-space()='Ok']";
 
 
-    // Spouse Element
+
 
     String DoBXpath = "//input[@id='DateOfBirth']";
 
@@ -190,7 +191,7 @@ public class LumpSumCover5000 extends PageObject {
     String SummaryTableXpath = "//table[@id='bootstrap-table']";
 
 
-    // Spouse Logic
+    // Spouse Elements
 
     String SpouseTitleXpath  = "//*[@id=\"Title\"]";
 
@@ -337,7 +338,7 @@ public class LumpSumCover5000 extends PageObject {
 
         $(By.xpath(SliderBarXpath)).click();
 
-        WebElement sliderPointer = $(By.xpath("//span[@aria-label='ngx-slider'])[1]"));
+        WebElement sliderPointer = $(By.xpath(R5000Xpath));
         sliderPointer.click();
     }
 
@@ -347,16 +348,26 @@ public class LumpSumCover5000 extends PageObject {
 
         $(By.xpath(SliderBarXpath)).click();
 
-        WebElement sliderPointer = $(By.xpath("//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[2]"));
+        WebElement sliderPointer = $(By.xpath(R10000Xpath));
         sliderPointer.click();
     }
-    @Step("Select cover amount of R10000 on the slider bar")
-    public void selectCoverAmountR10000()throws InterruptedException{
+    @Step("Select cover amount of R15000 on the slider bar")
+    public void selectCoverAmountR15000()throws InterruptedException{
         Thread.sleep(1000);
 
         $(By.xpath(SliderBarXpath)).click();
 
-        WebElement sliderPointer = $(By.xpath("//div[@class='ngx-slider-inner-tooltip ng-star-inserted'])[2]"));
+        WebElement sliderPointer = $(By.xpath(R15000Xpath));
+        sliderPointer.click();
+    }
+
+    @Step("Select cover amount of R20000 on the slider bar")
+    public void selectCoverAmountR20000()throws InterruptedException{
+        Thread.sleep(1000);
+
+        $(By.xpath(SliderBarXpath)).click();
+
+        WebElement sliderPointer = $(By.xpath(R20000Xpath));
         sliderPointer.click();
     }
 
@@ -417,7 +428,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select South African Citizen dropdown field")
     public void selectSACitizen(String SouthAfricanCitizen){
-        WebElement dropdown = $(By.xpath(SACitizenXpath));
+        WebElement dropdown = $(By.xpath(MainMemberSACitizenXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(SouthAfricanCitizen);
@@ -426,7 +437,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Click on ID text box")
     public void clickTextBox(){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        WebElement fieldText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(IDNumberXpath)));
+        WebElement fieldText = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainMemberIDNumberXpath)));
         fieldText.click();
 
 
@@ -437,7 +448,7 @@ public class LumpSumCover5000 extends PageObject {
     public void enterID(String IDNumber){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-        WebElement  mainIDPopUP = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainInputID)));
+        WebElement  mainIDPopUP = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainMemberMainInputID)));
         mainIDPopUP.click();
         mainIDPopUP.sendKeys(IDNumber);
 
@@ -447,7 +458,7 @@ public class LumpSumCover5000 extends PageObject {
     public void confirmID(String IDNumber){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-        WebElement confirmInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmID)));
+        WebElement confirmInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MainMemberConfirmID)));
         confirmInput.click();
         confirmInput.sendKeys(IDNumber);
 
@@ -457,7 +468,7 @@ public class LumpSumCover5000 extends PageObject {
     public void clickOKButton(){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-        WebElement OKBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OKButton)));
+        WebElement OKBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainMemberOKButton)));
         OKBtn.click();
 
     }
@@ -472,7 +483,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select monthly income from dropdown")
     public void selectMonthlyIncome(String MonthlyIncome){
-        WebElement dropdown = $(By.xpath(MonthlyIncomeXpath));
+        WebElement dropdown = $(By.xpath(MainMemberMonthlyIncomeXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(MonthlyIncome);
@@ -481,7 +492,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Occupation from dropdown")
     public void selectOccupation(String Occupation){
-        WebElement dropdown = $(By.xpath(OccupationXpath));
+        WebElement dropdown = $(By.xpath(MainMemberOccupationXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(Occupation);
@@ -492,7 +503,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Education from dropdown")
     public void selectEduction(String Education){
-        WebElement dropdown = $(By.xpath(EducationXpath));
+        WebElement dropdown = $(By.xpath(MainMemberEducationXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(Education);
@@ -501,7 +512,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Enter Cell Number on field text ")
     public void enterCellNum(String CellNumber){
 
-        WebElement MobileNum = $(By.xpath(CellNumberXpath));
+        WebElement MobileNum = $(By.xpath(MainMemberCellNumberXpath));
 
         MobileNum.click();
         MobileNum.sendKeys(CellNumber);
@@ -512,7 +523,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Enter Postal Address on field text")
     public void enterPostalAddress(String PostalAddress){
 
-        WebElement element = $(By.xpath(PostalAddressXpath));
+        WebElement element = $(By.xpath(MainMemberPostalAddressXpath));
 
         element.click();
         element.sendKeys(PostalAddress);
@@ -521,7 +532,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Enter Postal Code on field text")
     public void enterPostalCode( String PostalCode){
 
-        WebElement element = $(By.xpath(PostalCodeXpath));
+        WebElement element = $(By.xpath(MainMemberPostalCodeXpath));
 
         element.click();
         element.sendKeys(PostalCode);
@@ -531,7 +542,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Click on Copy to Physical")
     public void clickCopyPhysical(){
 
-        WebElement element = $(By.xpath(CopyPhysicalXpath));
+        WebElement element = $(By.xpath(MainMemberCopyPhysicalXpath));
 
         element.click();
     }
@@ -540,7 +551,7 @@ public class LumpSumCover5000 extends PageObject {
     public void clickValidateBtn()throws InterruptedException{
         Thread.sleep(3000);
 
-        WebElement element = $(By.xpath(ValidateBtnXpath));
+        WebElement element = $(By.xpath(MainMemberValidateBtnXpath));
 
         element.click();
 
@@ -599,7 +610,7 @@ public class LumpSumCover5000 extends PageObject {
     public void mainIDPopUp(String PayerID){
         WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
 
-        WebElement mainID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainIDXpath)));
+        WebElement mainID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PayerDetailsMainIDXpath)));
         mainID.click();
         mainID.sendKeys(PayerID);
 
@@ -609,7 +620,7 @@ public class LumpSumCover5000 extends PageObject {
     public void confirmationID(String PayerID){
         WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
 
-        WebElement confirmID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ConfirmIDXpath)));
+        WebElement confirmID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PayerDetailsConfirmIDXpath)));
         confirmID.click();
         confirmID.sendKeys(PayerID);
     }
@@ -618,7 +629,7 @@ public class LumpSumCover5000 extends PageObject {
     public void clickOK()throws InterruptedException{
         Thread.sleep(5000);
 
-        $(By.xpath(OKPopUpXpath)).click();
+        $(By.xpath(PayerDetailsOKPopUpXpath)).click();
     }
 
     @Step("Select the Relationship from dropdown list")
@@ -639,7 +650,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Debit date from dropdown list")
     public void selectDebiDate(String DebitDate){
-        WebElement dropdown = $(By.xpath(FirstDebitXpath));
+        WebElement dropdown = $(By.xpath(PayerDetailsFirstDebitXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(DebitDate);
@@ -647,7 +658,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Bank Name from dropdown list")
     public void selectBank(String BankName){
-        WebElement dropdown = $(By.xpath(BankNameXpath));
+        WebElement dropdown = $(By.xpath(PayerDetailsBankNameXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(BankName);
@@ -655,7 +666,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Branch Code from dropdown ")
     public void selectBranch(String BranchCode){
-        WebElement dropdown = $(By.xpath(BranchCodeXpath));
+        WebElement dropdown = $(By.xpath(PayerDetailsBranchCodeXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(BranchCode);
@@ -664,7 +675,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Select Account Type from dropdown")
     public void selectAccType(String AccountType){
-        WebElement dropdown = $(By.xpath(AcctTypeXpath));
+        WebElement dropdown = $(By.xpath(PayerDetailsAcctTypeXpath));
         Select selectObject = new Select(dropdown);
 
         selectObject.selectByValue(AccountType);
@@ -673,7 +684,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Click Account Number on the text field")
     public void enterAccNum(){
-        WebElement element = $(By.xpath(BankAccNumXpath));
+        WebElement element = $(By.xpath(PayerDetailsBankAccNumXpath));
         element.click();
 
 
@@ -683,7 +694,7 @@ public class LumpSumCover5000 extends PageObject {
     public void enterMainAcc(String AccountNumber){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(AccountXpath)));
+        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PayerDetailsAccountXpath)));
         mainAcc.click();
         mainAcc.sendKeys(AccountNumber);
 
@@ -693,7 +704,7 @@ public class LumpSumCover5000 extends PageObject {
     public void confirmAccount(String AccountNumber){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
-        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ConfAccXpath)));
+        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PayerDetailsConfAccXpath)));
         mainAcc.click();
         mainAcc.sendKeys(AccountNumber);
 
@@ -701,7 +712,7 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step("Click OK button for Account number to be captured on the text field")
     public void OKButton(){
-        $(By.xpath(OKButtonXpath)).click();
+        $(By.xpath(PayerDetailsOKButtonXpath)).click();
     }
 
     @Step("Enter Mobile Number on the text field")
@@ -772,48 +783,44 @@ public class LumpSumCover5000 extends PageObject {
     }
     @Step("Enter spouse name")
     public void SpouseName(String SpouseName){
-        $(By.xpath(NamesXpath)).sendKeys(SpouseName);
+        $(By.xpath(SpouseNamesXpath)).sendKeys(SpouseName);
     }
 
     @Step("enter spouse surname")
-    public void spouseSurname(String SpouseSurname){
-        $(By.xpath(SurnameXpath )).sendKeys(SpouseSurname);
+    public void SpouseSurname(String SpouseSurname){
+        $(By.xpath(SpouseSurnamesXpath )).sendKeys(SpouseSurname);
     }
 
 
 
     @Step("select spouse gender")
     public void SelectSpouseGender(String SpouseGender){
-        Select product = new Select(getDriver().findElement(By.xpath(GenderXpath )));
+        Select product = new Select(getDriver().findElement(By.xpath(SpouseGenderXpath )));
         product.selectByValue(SpouseGender);
 
 
     }
     @Step("Enter ID number")
     public void SpouseIDNumber(String EnterIDNumber){
-        $(By.xpath(IDNumberXpath)).sendKeys(EnterIDNumber);
+        $(By.xpath(SpouseIDNumbersXpath)).sendKeys(EnterIDNumber);
     }
 
 
     @Step("Save Spouse ")
     public  void SaveSpouse() throws InterruptedException {
         Thread.sleep(3000);
-        $(By.xpath(SaveSpouse)).click();
-    }
-
-
-    @Step("Enter child name")
-    public void EnterChildName(String ChildName) {
-        $(By.xpath(childName)).sendKeys(ChildName);
-
-
+        $(By.xpath(SaveSpouseXpath)).click();
     }
 
     @Step("Add a child ")
-    public void addChild(){
-        $(By.xpath(AddChildBtn)).click();
+    public void AddChild(){
+        $(By.xpath(AddChildBtnXpath)).click();
     }
+    @Step("Enter child name")
+    public void EnterChildName(String ChildName) {
+        $(By.xpath(childNameXpath)).sendKeys(ChildName);
 
+    }
     @Step("Enter a child surname")
     public void childSurname(String childSurName ){
         $(By.xpath(childSurNameXpath)).sendKeys(childSurName);
@@ -821,8 +828,8 @@ public class LumpSumCover5000 extends PageObject {
 
 
     @Step("Select gender for a child")
-    public void childGen(String ChildGender){
-        WebElement Cg = $(By.xpath(childGender));
+    public void childGenderXpath(String ChildGender){
+        WebElement Cg = $(By.xpath(childGenderXpath));
         selectFromDropdown(Cg,ChildGender);
 
 
@@ -831,13 +838,13 @@ public class LumpSumCover5000 extends PageObject {
 
     @Step( "Enter child ID Number")
     public void ChildIDNumber(String ChildIDNumber){
-        $(By.xpath(childIDnumber)).sendKeys(ChildIDNumber);
+        $(By.xpath(childIDnumberXpath)).sendKeys(ChildIDNumber);
     }
 
 
     @Step("select whether child is a student or not")
     public void ChildIsStudent(String  ChildStudent){
-        WebElement Cs = $(By.xpath(ChildisStudent));
+        WebElement Cs = $(By.xpath(ChildisStudentXpath));
         selectFromDropdown(Cs,ChildStudent);
 
 
@@ -846,7 +853,7 @@ public class LumpSumCover5000 extends PageObject {
     @Step("Save child details")
     public void SAVEChild() throws InterruptedException {
         Thread.sleep(5000);
-        $(By.xpath(saveChildBtn)).click();
+        $(By.xpath(saveChildBtnXpath)).click();
     }
 
 
