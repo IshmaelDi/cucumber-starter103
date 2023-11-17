@@ -4,7 +4,7 @@ Feature: Member Cover for All Ages
     Given log into SGUI '<username>', '<password>'
     When Family
     Then Enter DOB '<MainDOB>', '<SpouseDOB>'
-    And Cover Amount '<MainMemberID>', '<ConfirmMainMemberID>'
+    And Cover Amount '<MainMemberID>', '<ConfirmMainMemberID>', '<PayerID>', '<ConfirmPayerID>', '<Department>'
     Then Complete Sales
 
     #    MainMember Age = 3
@@ -16,11 +16,11 @@ Feature: Member Cover for All Ages
 
 
     Examples:
-      | username | password       | MainDOB    | SpouseDOB  | MainMemberID  | ConfirmMainMemberID |
-      | idirero  | Ish@cyest#2003 | 2020-12-12 | 2003-12-12 | 2012129859230 | 2012129859230       |
-      | idirero  | Ish@cyest#2003 | 2005-12-12 | 2003-12-12 | 0512125547798 | 0512125547798       |
-      | idirero  | Ish@cyest#2003 | 1993-12-12 | 2003-12-12 | 9312125880153 | 9312125880153       |
-      | idirero  | Ish@cyest#2003 | 1983-12-12 | 2003-12-12 | 8312128799997 | 8312128799997       |
-      | idirero  | Ish@cyest#2003 | 1973-12-12 | 2003-12-12 | 7312126384181 | 7312126384181       |
-      | idirero  | Ish@cyest#2003 | 1963-12-12 | 2003-12-12 | 6312127062944 | 6312127062944       |
+      | username | password       | MainDOB    | SpouseDOB  | MainMemberID  | ConfirmMainMemberID | PayerID       | ConfirmPayerID | Department     |
+      | idirero  | Ish@cyest#2003 | 1997-12-21 | 1997-12-12 | 1312167442480 | 1312167442480       | 8412158861384 | 8412158861384  | Gauteng Health |
+      | idirero  | Ish@cyest#2003 | 2004-12-21 | 2004-12-12 | 0312168448891 | 0312168448891       | 9812168819513 | 9812168819513  | Gauteng Health |
+      | idirero  | Ish@cyest#2003 | 1972-12-21 | 1972-12-12 | 9812168819513 | 9812168819513       | 7612159989271 | 7612159989271  | Gauteng Health |
+      | idirero  | Ish@cyest#2003 | 1965-12-21 | 1965-12-12 | 0112167187569 | 0112167187569       | 9512158497086 | 9512158497086  | Gauteng Health |
+      | idirero  | Ish@cyest#2003 | 1984-12-21 | 1984-12-12 | 8812167952290 | 8812167952290       | 9712157887044 | 9712157887044  | Gauteng Health |
+
 
