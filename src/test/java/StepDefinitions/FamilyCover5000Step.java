@@ -21,9 +21,9 @@ public class FamilyCover5000Step extends PageObject {
     }
 
     @When("user log in with valid credentials by entering, {string}, {string}")
-    public void user_log_in_with_valid_credentials_by_entering(String string, String string2) throws InterruptedException {
+    public void user_log_in_with_valid_credentials_by_entering(String Username, String Password) throws InterruptedException {
         familyCover5000.clickArrowButton();
-        familyCover5000.PopUpLogin(string, string2);
+        familyCover5000.PopUpLogin(Username, Password);
         familyCover5000.LoginButton();
         familyCover5000.ClienteleLogo();
         familyCover5000.CaptureSale();

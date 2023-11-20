@@ -131,6 +131,12 @@ public class FamilyCover15000 extends PageObject {
 
     String EmpStatusXpath = "//select[@id='IsEmployee']";
 
+    String EmployeenumberXpath = "//*[@id=\"EmployeeNumber\"]";
+
+    String DepartmentXpath = "//*[@id=\"Department\"]";
+
+    String DeductionAuthorisationXpath = "//*[@id=\"Authorised\"]";
+
     String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
 
     String CheckBox1Xpath = "(//input[@type='checkbox'])[2]";
@@ -414,12 +420,12 @@ public class FamilyCover15000 extends PageObject {
     }
 
     @Step("Click on confirm ID Number PopUp")
-    public void confirmID(String IDNumber){
+    public void confirmID(String IDNumber2){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
         WebElement confirmInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ConfirmID)));
         confirmInput.click();
-        confirmInput.sendKeys(IDNumber);
+        confirmInput.sendKeys(IDNumber2);
 
     }
 
@@ -688,7 +694,33 @@ public class FamilyCover15000 extends PageObject {
 
     }
 
-    @Step("Select All checkboxes for confirmations of a Payer ")
+    @Step("Capture employee number")
+    public  void captureEmployeeNumber(String EmployeeNumber){
+        $(By.xpath(EmployeenumberXpath)).sendKeys(EmployeeNumber);
+    }
+
+    @Step("Select Department")
+    public  void Department(String Department) throws InterruptedException {
+        Thread.sleep(1000);
+
+
+        WebElement dropdown = $(By.xpath(DepartmentXpath));
+        Select selectObject = new Select(dropdown);
+        selectObject.selectByValue(Department);
+
+    }
+    @Step("Select Authorisation")
+        public  void Authorisation (String Auth){
+        WebElement dropdown = $(By.xpath(DeductionAuthorisationXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(Auth);
+
+    }
+
+
+
+        @Step("Select All checkboxes for confirmations of a Payer ")
     public void confCheckBoxes(){
         WebElement checkbox = $(By.xpath(ConfirmCheckBoxXpath));
 

@@ -58,14 +58,14 @@ public class FamilyCover15000Step extends PageObject {
 
     }
     @Then("User add member details by Capturing, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void user_add_member_details_by_capturing(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12) throws InterruptedException {
+    public void user_add_member_details_by_capturing(String string, String string2, String string3, String string4, String IDNumber, String IDNumber2, String string7, String string8, String string9, String string10, String string11, String string12) throws InterruptedException {
         familyCover15000.selectTittleDropdown(string);
         familyCover15000.EnterName(string2);
         familyCover15000.EnterSurname(string3);
         familyCover15000.selectSACitizen(string4);
         familyCover15000.clickTextBox();
-        familyCover15000.enterID(string5);
-        familyCover15000.confirmID(string6);
+        familyCover15000.enterID(IDNumber);
+        familyCover15000.confirmID(IDNumber2);
         familyCover15000.clickOKButton();
         //lumpSumCover20000.EnterDoB("1992-06-03");
         familyCover15000.selectMonthlyIncome(string7);
@@ -79,8 +79,10 @@ public class FamilyCover15000Step extends PageObject {
         familyCover15000.clickSaveMMBtn();
 
     }
-    @When("User add payer details by Capturing, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void user_add_payer_details_by_capturing(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15) throws InterruptedException {
+    @When("User add payer details by Capturing, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string},{string},{string},{string}")
+    public void user_add_payer_details_by_capturing(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15, String EmployeeNumber, String Department, String Auth) throws InterruptedException {
+
+
         familyCover15000.navigatePayer();
         familyCover15000.selectTittle(string);
         familyCover15000.enterName(string2);
@@ -101,18 +103,21 @@ public class FamilyCover15000Step extends PageObject {
         familyCover15000.OKButton();
         familyCover15000.enterMobiNum(string14);
         familyCover15000.isEmployee(string15);
+     familyCover15000.captureEmployeeNumber(EmployeeNumber);
+     familyCover15000.Department(Department);
+     familyCover15000.Authorisation(Auth);
         familyCover15000.confCheckBoxes();
         familyCover15000.clickSaveBtn();
 
     }
     @Then("User add spouse details by Capturing, {string}, {string}, {string}, {string}, {string}")
-    public void user_add_spouse_details_by_capturing(String string, String string2, String string3, String string4, String string5) throws InterruptedException {
+    public void user_add_spouse_details_by_capturing(String string, String string2, String string3, String string4, String spouseID) throws InterruptedException {
         familyCover15000.navigateSpouse();
         familyCover15000.spouseTitle(string);
         familyCover15000.spouseName(string2);
         familyCover15000.spouseSurName(string3);
         familyCover15000.spouseGender(string4);
-        familyCover15000.spouseID(string5);
+        familyCover15000.spouseID(spouseID);
 
     }
     @When("User add child details by Capturing, {string}, {string}, {string}, {string}, {string}")
