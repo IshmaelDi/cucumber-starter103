@@ -27,7 +27,7 @@ public class LumpSumCover20000Step extends PageObject {
     @When("user Select the plan option: Individual or Member and family")
     public void user_select_the_plan_option_individual_or_member_and_family() throws InterruptedException {
         lumpSumCover20000.HelpIconButton();
-        lumpSumCover20000.SelectPlanTextDropdown("YA");
+        lumpSumCover20000.SelectPlanTextDropdown("YF");
         lumpSumCover20000.SelectPlanOkBtn();
 
     }

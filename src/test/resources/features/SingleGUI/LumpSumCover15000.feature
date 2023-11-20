@@ -13,4 +13,4 @@ Feature:Clientele accident plus health event life plan Functionality
 
     Examples:
     | Username | Password
-    | WRambau  | clientele00
+    | idirero  | Ish@cyest#2003

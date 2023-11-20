@@ -25,7 +25,7 @@ public class ProductPageStep extends PageObject {
     @When("user clicks on Help icon")
     public void user_clicks_on_help_icon()throws InterruptedException{
         productPage.HelpIconButton();
-        productPage.SelectPlanTextDropdown("YG");
+        productPage.SelectPlanTextDropdown("YF");
 
     }
     @Then("user Click on Ok Button to proceed")

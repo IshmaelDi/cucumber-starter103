@@ -22,7 +22,7 @@ public class GetRatesPageStep extends PageObject {
        getRatesPage.LeadCheckBox();
        getRatesPage.ActionSaleButton();
        getRatesPage.HelpIconButton();
-       getRatesPage.SelectPlanTextDropdown("YG");
+       getRatesPage.SelectPlanTextDropdown("YF");
        getRatesPage.SelectPlanOkBtn();
 
     }
