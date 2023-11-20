@@ -22,7 +22,7 @@ public class LumpSumCover15000Step extends PageObject {
     @And("Login in using valid Credentials, {string} and {string}")
     public void loginInUsingValidCredentialsAnd(String Username, String Password) throws InterruptedException {
         lumpSumCover15000.clickArrowButton();
-        lumpSumCover15000.PopUpLogin("WRambau", "clientele003");
+        lumpSumCover15000.PopUpLogin("idirero", "Ish@cyest#2003");
         lumpSumCover15000.LoginButton();
         lumpSumCover15000.ClienteleLogo();
         lumpSumCover15000.CaptureSale();
@@ -34,7 +34,7 @@ public class LumpSumCover15000Step extends PageObject {
     @When("user Select the plan option: Individual or member and family")
     public void user_select_the_plan_option_individual_or_member_and_family() throws InterruptedException {
         lumpSumCover15000.HelpIconButton();
-        lumpSumCover15000.SelectPlanTextDropdown("YA");
+        lumpSumCover15000.SelectPlanTextDropdown("YF");
         lumpSumCover15000.SelectPlanOkBtn();
 
     }

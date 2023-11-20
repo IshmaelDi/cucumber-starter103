@@ -16,7 +16,7 @@ public class LeadSourcePageStep extends PageObject {
     @When("User login using valid credentials")
     public void user_login_using_valid_credentials() throws InterruptedException {
         leadSourcePage.OpenWebsite();
-        leadSourcePage.loginIn("WRambau@clientele.co.za", "clientele003");
+        leadSourcePage.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
 
     }
     @Then("User clicks on clientele logo")

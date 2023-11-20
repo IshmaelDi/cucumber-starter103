@@ -17,7 +17,7 @@ public class LandingPageStep extends PageObject {
     }
     @When("Login in using valid Credentials")
     public void login_in_using_valid_credentials() {
-       landingPage.loginIn("WRambau@clientele.co.za", "clientele003");
+       landingPage.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
     }
 
 

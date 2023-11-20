@@ -15,7 +15,7 @@ public class LumpSumCover20000Step extends PageObject {
     @Given("user log in SGUI  website")
     public void user_log_in_sgui_website() throws InterruptedException {
         lumpSumCover20000.OpenWebsite();
-        lumpSumCover20000.loginIn("WRambau@clientele.co.za", "clientele003");
+        lumpSumCover20000.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
         lumpSumCover20000.ClienteleLogo();
         lumpSumCover20000.CaptureSale();
         lumpSumCover20000.LeadBasket();

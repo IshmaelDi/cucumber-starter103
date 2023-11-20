@@ -19,7 +19,7 @@ public class CaptureSalePageStep extends PageObject {
     }
     @When("user login using valid credentials")
     public void user_login_using_valid_credentials() {
-        captureSalePage.loginIn("WRambau@clientele.co.za", "clientele003");
+        captureSalePage.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
     }
     @When("user clicks on clientele icon")
     public void user_clicks_on_clientele_icon() throws InterruptedException {

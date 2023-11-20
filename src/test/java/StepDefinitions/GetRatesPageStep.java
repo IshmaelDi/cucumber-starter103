@@ -15,7 +15,7 @@ public class GetRatesPageStep extends PageObject {
     @Given("user opens Shamba application website")
     public void user_opens_shamba_application_website()throws InterruptedException {
        getRatesPage.OpenWebsite();
-       getRatesPage.loginIn("WRambau@clientele.co.za", "clientele003");
+       getRatesPage.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
        getRatesPage.ClienteleLogo();
        getRatesPage.CaptureSale();
        getRatesPage.LeadBasket();

@@ -15,7 +15,7 @@ public class ProductPageStep extends PageObject {
     @Given("user opens Shamba website")
     public void user_opens_shamba_website()throws InterruptedException {
         productPage.OpenWebsite();
-        productPage.loginIn("WRambau@clientele.co.za", "clientele003");
+        productPage.loginIn("idirero@clientele.co.za", "Ish@cyest#2003");
         productPage.ClienteleLogo();
         productPage.CaptureSale();
         productPage.LeadBasket();
