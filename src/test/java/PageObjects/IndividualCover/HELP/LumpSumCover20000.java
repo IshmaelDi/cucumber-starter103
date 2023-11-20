@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LumpSumCover20000 extends PageObject {
-    String Url = "https://shambawebtest.clientele.co.za/shambaweb/login";
+    String Url = "http://shambawebtest.clientele.local/shambaweb/";
 
     String LoginBtn = "//*[@id=\"navbarSupportedContent\"]/div/div/button/span";
     String UserName = "//*[@id=\"i0116\"]";

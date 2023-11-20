@@ -13,4 +13,5 @@ Feature:Clientele accident plus health event life plan Functionality
 
     Examples:
     | Username | Password
-    | WRambau  | clientele00
+    | spadayachy  | Marvel_2023
+

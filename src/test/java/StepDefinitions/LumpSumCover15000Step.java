@@ -22,7 +22,7 @@ public class LumpSumCover15000Step extends PageObject {
     @And("Login in using valid Credentials, {string} and {string}")
     public void loginInUsingValidCredentialsAnd(String Username, String Password) throws InterruptedException {
         lumpSumCover15000.clickArrowButton();
-        lumpSumCover15000.PopUpLogin("idirero", "Ish@cyest#2003");
+        lumpSumCover15000.PopUpLogin(Username, Password);
         lumpSumCover15000.LoginButton();
         lumpSumCover15000.ClienteleLogo();
         lumpSumCover15000.CaptureSale();

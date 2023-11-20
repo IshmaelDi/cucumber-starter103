@@ -13,4 +13,4 @@ Feature: home Page Functionality
 
       Examples:
       | Username | password     |
-      | WRambau  | clientele003 |
+      | Spadayahcy  | Marvel_2023 |

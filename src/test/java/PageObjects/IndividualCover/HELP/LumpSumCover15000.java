@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LumpSumCover15000 extends PageObject {
-    String Url = "https://shambawebtest.clientele.co.za/shambaweb/";
+    String Url = "http://shambawebtest.clientele.local/shambaweb/";
 
 
     String ArrowButtonXpath = "//i[@class='bi bi-box-arrow-right profile-icon profile-icon-default']";
