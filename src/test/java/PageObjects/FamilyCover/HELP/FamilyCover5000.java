@@ -130,6 +130,10 @@ public class FamilyCover5000 extends PageObject {
     String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
 
     String EmpStatusXpath = "//select[@id='IsEmployee']";
+    String EmployeeNumberXpath = "//input[@id='EmployeeNumber']";
+    String DepartmentXpath = "//select[@id='Department']";
+    String DeductionAuthosedXpath = "//select[@id='Authorised']";
+
 
     String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
 
@@ -676,6 +680,38 @@ public class FamilyCover5000 extends PageObject {
         selectObject.selectByValue(PayerIsEmployee);
 
     }
+
+    @Step("Capture Employee Number")
+    public  void EmployeeNumber(String Employee) throws InterruptedException {
+        Thread.sleep(1000);
+        $(By.xpath(EmployeeNumberXpath)).sendKeys(Employee);
+
+
+    }
+
+    @Step("Select Department")
+    public  void SelectDepartment(String Department) throws InterruptedException {
+        Thread.sleep(1000);
+        WebElement dropdown = $(By.xpath(DepartmentXpath));
+        Select selectObject = new Select(dropdown);
+        selectObject.selectByValue(Department);
+    }
+
+    @Step("Select Deduction Authorised")
+    public  void DeductionAuthorised(String Deduction) throws InterruptedException {
+        Thread.sleep(1000);
+        WebElement dropdown = $(By.xpath(DeductionAuthosedXpath));
+        Select selectObject = new Select(dropdown);
+        selectObject.selectByValue(Deduction);
+    }
+
+
+
+
+
+
+
+
 
     @Step("Select All checkboxes for confirmations of a Payer ")
     public void confCheckBoxes(){
