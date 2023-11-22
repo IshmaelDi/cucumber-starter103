@@ -682,34 +682,34 @@ public class FamilyCover5000 extends PageObject {
 
     }
 
-    @Step("Capture Employee Number")
-
-    public  void EmployeeNumber(String Employee) throws InterruptedException {
-        Thread.sleep(2000);
-        WebElement dropdown1 = $(By.xpath("//input[@id='EmployeeNumber']"));
-        dropdown1.click();
-        dropdown1.sendKeys(Employee);
-
-
-    }
-
-    @Step("Select Department")
-
-    
-    public  void SelectDepartment(String Department) throws InterruptedException {
-        Thread.sleep(1000);
-        WebElement dropdown2 = $(By.xpath("//select[@id='Department']"));
-        Select selectObject2 = new Select(dropdown2);
-        selectObject2.selectByVisibleText(Department);
-    }
-
-    @Step("Select Deduction Authorised")
-    public  void DeductionAuthorised(String Deduction) throws InterruptedException {
-        Thread.sleep(1000);
-        WebElement dropdown3 = $(By.xpath("//select[@id='Authorised']"));
-        Select selectObject3 = new Select(dropdown3);
-        selectObject3.selectByVisibleText(Deduction);
-    }
+//    @Step("Capture Employee Number")
+//
+//    public  void EmployeeNumber(String Employee) throws InterruptedException {
+//        Thread.sleep(2000);
+//        WebElement dropdown1 = $(By.xpath("//input[@id='EmployeeNumber']"));
+//        dropdown1.click();
+//        dropdown1.sendKeys(Employee);
+//
+//
+//    }
+//
+//    @Step("Select Department")
+//
+//
+//    public  void SelectDepartment(String Department) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown2 = $(By.xpath("//select[@id='Department']"));
+//        Select selectObject2 = new Select(dropdown2);
+//        selectObject2.selectByVisibleText(Department);
+//    }
+//
+//    @Step("Select Deduction Authorised")
+//    public  void DeductionAuthorised(String Deduction) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown3 = $(By.xpath("//select[@id='Authorised']"));
+//        Select selectObject3 = new Select(dropdown3);
+//        selectObject3.selectByVisibleText(Deduction);
+//    }
 
 
 

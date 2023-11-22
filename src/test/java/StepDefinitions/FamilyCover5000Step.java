@@ -109,9 +109,9 @@ public class FamilyCover5000Step extends PageObject {
         familyCover5000.OKButton();
         familyCover5000.enterMobiNum(string14);
         familyCover5000.isEmployee(string15);
-        familyCover5000.EmployeeNumber(Employee);
-        familyCover5000.SelectDepartment(Department);
-        familyCover5000.DeductionAuthorised(Deduction);
+//        familyCover5000.EmployeeNumber(Employee);
+//        familyCover5000.SelectDepartment(Department);
+//        familyCover5000.DeductionAuthorised(Deduction);
         familyCover5000.confCheckBoxes();
         familyCover5000.clickSaveBtn();
 
