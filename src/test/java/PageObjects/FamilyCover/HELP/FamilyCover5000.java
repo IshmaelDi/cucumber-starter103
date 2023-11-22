@@ -130,6 +130,10 @@ public class FamilyCover5000 extends PageObject {
     String MobileNumXpath = "//input[@id='MobileTelephoneNumber']";
 
     String EmpStatusXpath = "//select[@id='IsEmployee']";
+    String EmployeeNumberXpath = "//input[@id='EmployeeNumber']";
+    String DepartmentXpath = "//select[@id='Department']";
+    String DeductionAuthosedXpath = "//select[@id='Authorised']";
+
 
     String ConfirmCheckBoxXpath = "(//input[@type='checkbox'])[1]";
 
@@ -177,17 +181,18 @@ public class FamilyCover5000 extends PageObject {
 
     @Step("Clicks on Arrow-Button to log in")
     public void clickArrowButton(){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10) );
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ArrowButtonXpath)));
-
         element.click();
 
 
     }
 
     @Step("Login in using valid Credentials")
+
     public void PopUpLogin(String Username, String Password) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
 
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserName))).click();
@@ -676,6 +681,43 @@ public class FamilyCover5000 extends PageObject {
         selectObject.selectByValue(PayerIsEmployee);
 
     }
+
+//    @Step("Capture Employee Number")
+//
+//    public  void EmployeeNumber(String Employee) throws InterruptedException {
+//        Thread.sleep(2000);
+//        WebElement dropdown1 = $(By.xpath("//input[@id='EmployeeNumber']"));
+//        dropdown1.click();
+//        dropdown1.sendKeys(Employee);
+//
+//
+//    }
+//
+//    @Step("Select Department")
+//
+//
+//    public  void SelectDepartment(String Department) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown2 = $(By.xpath("//select[@id='Department']"));
+//        Select selectObject2 = new Select(dropdown2);
+//        selectObject2.selectByVisibleText(Department);
+//    }
+//
+//    @Step("Select Deduction Authorised")
+//    public  void DeductionAuthorised(String Deduction) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown3 = $(By.xpath("//select[@id='Authorised']"));
+//        Select selectObject3 = new Select(dropdown3);
+//        selectObject3.selectByVisibleText(Deduction);
+//    }
+
+
+
+
+
+
+
+
 
     @Step("Select All checkboxes for confirmations of a Payer ")
     public void confCheckBoxes(){
