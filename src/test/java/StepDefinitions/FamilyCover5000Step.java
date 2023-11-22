@@ -22,6 +22,7 @@ public class FamilyCover5000Step extends PageObject {
 
     @When("user log in with valid credentials by entering, {string}, {string}")
     public void user_log_in_with_valid_credentials_by_entering(String Username, String Password) throws InterruptedException {
+
         familyCover5000.clickArrowButton();
         familyCover5000.PopUpLogin(Username, Password);
         familyCover5000.LoginButton();
@@ -76,7 +77,7 @@ public class FamilyCover5000Step extends PageObject {
         familyCover5000.selectMonthlyIncome(string7);
         familyCover5000.selectOccupation(string8);
         familyCover5000.selectEduction(string9);
-        familyCover5000.enterCellNum(string10);
+        familyCover5000.enterCellNum("0728712955");
         familyCover5000.enterPostalAddress(string11);
         familyCover5000.enterPostalCode(string12);
         familyCover5000.clickCopyPhysical();
@@ -86,7 +87,7 @@ public class FamilyCover5000Step extends PageObject {
 
 
     @When("user add payer details by capturing, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
-    public void user_add_payer_details_by_capturing(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15, String string16, String string17, String string18) throws InterruptedException {
+    public void user_add_payer_details_by_capturing(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15, String Employee, String Department, String Deduction) throws InterruptedException {
 
         familyCover5000.navigatePayer();
         familyCover5000.selectTittle(string);
@@ -108,6 +109,9 @@ public class FamilyCover5000Step extends PageObject {
         familyCover5000.OKButton();
         familyCover5000.enterMobiNum(string14);
         familyCover5000.isEmployee(string15);
+        familyCover5000.EmployeeNumber(Employee);
+        familyCover5000.SelectDepartment(Department);
+        familyCover5000.DeductionAuthorised(Deduction);
         familyCover5000.confCheckBoxes();
         familyCover5000.clickSaveBtn();
 
