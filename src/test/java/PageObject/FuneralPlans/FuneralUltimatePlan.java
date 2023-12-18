@@ -199,7 +199,7 @@ public class FuneralUltimatePlan extends PageObject {
     // Logic for FuneralPan
 
     @Step("Open shamba website")
-    public void OpenWebsiteS() throws InterruptedException {
+    public void OpenWebsite() throws InterruptedException {
         getDriver().get(Url);
         getDriver().manage().window().maximize();
         Thread.sleep(1000);
@@ -309,12 +309,13 @@ public class FuneralUltimatePlan extends PageObject {
 
 
     @Step("Click on Plan Option and select Cover")
-    public void SelectPlanOption(String selectPlan) {
+    public void SelectPlanOption(String PlanOption) throws InterruptedException {
+        Thread.sleep(1000);
 
         WebElement dropdown = $(By.xpath(PlanOptionXpath));
         Select selectObject = new Select(dropdown);
 
-        selectObject.selectByVisibleText(selectPlan);
+        selectObject.selectByVisibleText(PlanOption);
 
 
     }
@@ -537,4 +538,504 @@ public class FuneralUltimatePlan extends PageObject {
 
         button.click();
     }
+
+    @Step("Navigate Payer page")
+    public void navigatePayer()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(PayerXpath)).click();
+    }
+
+    @Step("Select Tittle from dropdown")
+    public void selectTittle(String PayerTittle){
+        WebElement tittleDropdown = $(By.xpath(PayerTittleXpath));
+        Select selectObject = new Select(tittleDropdown);
+
+        selectObject.selectByValue(PayerTittle);
+
+    }
+
+    @Step("Enter Name on field text")
+    public void enterName(String PayerName){
+        WebElement fieldText = $(By.xpath(PayerNameXpath));
+        fieldText.click();
+        fieldText.sendKeys(PayerName);
+
+    }
+
+    @Step("Enter Surname on field text")
+    public void enterSurname(String PayerSurname){
+        WebElement fieldText = $(By.xpath(PayerSurnameXpath));
+        fieldText.click();
+        fieldText.sendKeys(PayerSurname);
+
+    }
+
+    @Step("Click on Payer ID text field")
+    public void fieldTextID(){
+        WebElement fieldText = $(By.xpath(PayerIDXpath));
+        fieldText.click();
+    }
+
+    @Step("Enter ID on MainInput PopUp")
+    public void mainIDPopUp(String PayerID){
+        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+
+        WebElement mainID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MainIDXpath)));
+        mainID.click();
+        mainID.sendKeys(PayerID);
+
+    }
+
+    @Step("Enter Confirmation of ID on PopUp field text")
+    public void confirmationID(String PayerID){
+        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+
+        WebElement confirmID = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ConfirmIDXpath)));
+        confirmID.click();
+        confirmID.sendKeys(PayerID);
+    }
+
+    @Step("Click  OK button to capture ID")
+    public void clickOK()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(OKPopUpXpath)).click();
+    }
+
+    @Step("Select the Relationship from dropdown list")
+    public void PayerRelation(String Relationship){
+        WebElement dropdown = $(By.xpath(PayerRelationXpath));
+        Select selectObject = new  Select(dropdown);
+
+        selectObject.selectByValue(Relationship);
+    }
+
+    @Step("Select Debit day from dropdown list")
+    public void selectDebit(String DebitDay){
+        WebElement dropdown = $(By.xpath(PayerDebitXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(DebitDay);
+    }
+
+    @Step("Select Debit date from dropdown list")
+    public void selectDebiDate(String DebitDate){
+        WebElement dropdown = $(By.xpath(FirstDebitXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(DebitDate);
+    }
+
+    @Step("Select Bank Name from dropdown list")
+    public void selectBank(String BankName){
+        WebElement dropdown = $(By.xpath(BankNameXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(BankName);
+    }
+
+    @Step("Select Branch Code from dropdown ")
+    public void selectBranch(String BranchCode){
+        WebElement dropdown = $(By.xpath(BranchCodeXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(BranchCode);
+
+    }
+
+    @Step("Select Account Type from dropdown")
+    public void selectAccType(String AccountType){
+        WebElement dropdown = $(By.xpath(AcctTypeXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(AccountType);
+
+    }
+
+    @Step("Click Account Number on the text field")
+    public void enterAccNum(){
+        WebElement element = $(By.xpath(BankAccNumXpath));
+        element.click();
+
+
+    }
+
+    @Step("Enter Account Number on Main text field")
+    public void enterMainAcc(String AccountNumber){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(AccountXpath)));
+        mainAcc.click();
+        mainAcc.sendKeys(AccountNumber);
+
+    }
+
+    @Step("Enter Confirmation of Account number on the text field")
+    public void confirmAccount(String AccountNumber){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+        WebElement mainAcc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ConfAccXpath)));
+        mainAcc.click();
+        mainAcc.sendKeys(AccountNumber);
+
+    }
+
+    @Step("Click OK button for Account number to be captured on the text field")
+    public void OKButton(){
+        $(By.xpath(OKButtonXpath)).click();
+    }
+
+    @Step("Enter Mobile Number on the text field")
+    public void enterMobiNum(String MobileNumber){
+        WebElement element = $(By.xpath(MobileNumXpath));
+        element.click();
+        element.sendKeys(MobileNumber);
+
+    }
+
+    @Step("Select if Payer is employee from dropdown")
+    public  void isEmployee(String PayerIsEmployee){
+        WebElement dropdown = $(By.xpath(EmpStatusXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(PayerIsEmployee);
+
+    }
+
+//    @Step("Capture Employee Number")
+//
+//    public  void EmployeeNumber(String Employee) throws InterruptedException {
+//        Thread.sleep(2000);
+//        WebElement dropdown1 = $(By.xpath("//input[@id='EmployeeNumber']"));
+//        dropdown1.click();
+//        dropdown1.sendKeys(Employee);
+//
+//
+//    }
+//
+//    @Step("Select Department")
+//
+//
+//    public  void SelectDepartment(String Department) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown2 = $(By.xpath("//select[@id='Department']"));
+//        Select selectObject2 = new Select(dropdown2);
+//        selectObject2.selectByVisibleText(Department);
+//    }
+//
+//    @Step("Select Deduction Authorised")
+//    public  void DeductionAuthorised(String Deduction) throws InterruptedException {
+//        Thread.sleep(1000);
+//        WebElement dropdown3 = $(By.xpath("//select[@id='Authorised']"));
+//        Select selectObject3 = new Select(dropdown3);
+//        selectObject3.selectByVisibleText(Deduction);
+//    }
+
+
+
+
+    @Step("Select All checkboxes for confirmations of a Payer ")
+    public void confCheckBoxes(){
+        WebElement checkbox = $(By.xpath(ConfirmCheckBoxXpath));
+
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
+
+        WebElement checkbox1 = $(By.xpath(CheckBox1Xpath));
+
+        if (!checkbox1.isSelected()) {
+            checkbox1.click();
+        }
+
+    }
+
+    @Step("Click on Save Payer Button")
+    public void clickSaveBtn()throws InterruptedException{
+        WebElement button = $(By.xpath(SavePayerXpath));
+        button.click();
+
+    }
+
+    @Step("Navigate to Spouse Page")
+    public void navigateSpouse()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(SpouseXpath)).click();
+
+    }
+
+    @Step("Enter Spouse Title")
+    public void spouseTitle(String spouseTitle){
+        WebElement Title = $(By.xpath("//select[@id='Title']"));
+        Title.click();
+        Title.sendKeys(spouseTitle);
+
+    }
+
+    @Step("Enter Spouse Name")
+    public void spouseName(String spouseName){
+        WebElement Name = $(By.xpath("//input[@id='FirstNames']"));
+        Name.click();
+        Name.sendKeys(spouseName);
+    }
+
+    @Step("Enter Spouse Surname")
+    public void spouseSurName(String spouseSurname){
+        WebElement Surname = $(By.xpath("//input[@id='Surname']"));
+        Surname.click();
+        Surname.sendKeys(spouseSurname);
+    }
+
+    @Step("Enter Spouse Gender")
+    public void spouseGender(String spouseGender){
+
+        WebElement dropdown = $(By.xpath("//select[@id='Gender']"));
+        Select selectObject = new Select(dropdown);
+        selectObject.selectByValue(spouseGender);
+    }
+
+    @Step("Enter Spouse Identity Number")
+    public void spouseID(String spouseID) throws InterruptedException {
+        WebElement ID = $(By.xpath("//input[@id='IdentityNumber']"));
+        ID.click();
+        ID.sendKeys(spouseID);
+
+
+        WebElement saveSpouse = $(By.xpath("//span[@class='title']"));
+        saveSpouse.click();
+        Thread.sleep(3000);
+
+        WebElement saveSpouse1 = $(By.xpath("//button[@class='btn btn-success']"));
+        saveSpouse1.click();
+    }
+
+    @Step("Navigate to Child Page")
+    public void navigateChild()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(ChildXpath)).click();
+
+    }
+
+    @Step("Click on Tab-Content")
+    public void clickTab(){
+        $(By.xpath("//*[@id=\"pills-tabContent\"]/child/div/div/div/div/div/div[2]/button")).click();
+
+    }
+
+    @Step("Enter Child Name")
+    public void enterChildName(String name){
+        WebElement Name = $(By.xpath("//input[@id='FirstNames']"));
+        Name.click();
+        Name.sendKeys(name);
+
+    }
+
+    @Step("Enter Child Surname")
+    public void enterChildSurname(String surname){
+        WebElement Surname = $(By.xpath("//input[@id='Surname']"));
+        Surname.click();
+        Surname.sendKeys(surname);
+
+    }
+
+    @Step("Enter Child Gender")
+    public void selectGender(String Gender){
+        WebElement gender = $(By.xpath("//select[@id='Gender']"));
+        Select selectObject = new Select(gender);
+        selectObject.selectByValue(Gender);
+
+    }
+
+    @Step("Enter Child Identity Number")
+    public void enterChildID(String IDNumber){
+        WebElement ID = $(By.xpath("//input[@id='IdentityNumber']"));
+        ID.click();
+        ID.sendKeys(IDNumber);
+
+    }
+
+    @Step("Select Child if is student")
+    public void ChildIsStudent(String Student){
+        WebElement dropdown1 = $(By.xpath("//select[@id='IsStudent']"));
+        Select selectObject1 = new Select(dropdown1);
+        selectObject1.selectByValue(Student);
+
+        WebElement saveChild = $(By.xpath("//span[normalize-space()='Save Child']"));
+        saveChild.click();
+    }
+
+
+
+    @Step("Navigate to Beneficiary Page")
+    public void navigateBeneficiary()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(BeneXpath)).click();
+
+    }
+
+    @Step("Click on Add Beneficiary button")
+    public void addBeneficiary(){
+
+        $(By.xpath(AddBenXpath)).click();
+
+    }
+
+    @Step("Select Member Estate from Relationship dropdown")
+    public void selectRelation(String Relationship){
+        WebElement dropdown = $(By.xpath(RelationXpath));
+        Select selectObject = new Select(dropdown);
+
+        selectObject.selectByValue(Relationship);
+    }
+
+    @Step("Click Save Beneficiary Button")
+    public void saveBeneficiary()throws InterruptedException {
+
+        $(By.xpath(SaveBenXpath)).click();
+        Thread.sleep(5000);
+
+        WebElement PopUp = $(By.xpath("//button[@type='button']"));
+        PopUp.click();
+
+    }
+
+    @Step("Navigate to FICA Page")
+    public void navigateFICA()throws  InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(Fica1Xpath)).click();
+
+        WebElement isProminentPublicOfficial = $(By.xpath("//select[@id='IsProminentPublicOfficial']"));
+        Select selectObject = new Select(isProminentPublicOfficial);
+        selectObject.selectByValue("Yes");
+
+        WebElement isProminentInternationalPublicOfficial = $(By.xpath("//select[@id='IsProminentInternationalPublicOfficial']"));
+        Select selectObject1 = new Select(isProminentInternationalPublicOfficial);
+        selectObject1.selectByValue("No");
+
+        $(By.xpath("//span[@class='title']")).click();
+
+    }
+
+    @Step("Navigate to Premium Page")
+    public void navigatePremium()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(PremXpath)).click();
+        WebElement dropdown = $(By.xpath("//select[@id='productConversion']"));
+        Select selectObject = new Select(dropdown);
+        selectObject.getAllSelectedOptions();
+
+        String targetPointXpath = "//span[@aria-label='ngx-slider']";
+        WebElement targetPoint = $(By.xpath(targetPointXpath));
+        targetPoint.click();
+
+        WebElement savePremium = $(By.xpath("//span[@class='title']"));
+        savePremium.click();
+
+    }
+
+    @Step("Navigate to Rewards Page")
+    public void navigateRewards()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(RewardsXpath)).click();
+
+        WebElement checkbox = $(By.xpath("(//input[@type='checkbox'])[1]"));
+
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
+
+        WebElement savePremium = $(By.xpath("//span[@class='title']"));
+        savePremium.click();
+
+    }
+
+    @Step("Navigate to Summary Page")
+    public void navigateSummary()throws InterruptedException{
+        Thread.sleep(5000);
+
+        $(By.xpath(SummaryXpath)).click();
+
+
+        WebElement checkbox = $(By.xpath("(//input[@type='checkbox'])[1]"));
+
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
+
+        WebElement checkbox1 = $(By.xpath("(//input[@type='checkbox'])[2]"));
+
+        if (!checkbox1.isSelected()) {
+            checkbox1.click();
+        }
+
+        WebElement checkbox2 = $(By.xpath("(//input[@type='checkbox'])[3]"));
+
+        if (!checkbox2.isSelected()) {
+            checkbox2.click();
+        }
+
+        WebElement checkbox3 = $(By.xpath("(//input[@type='checkbox'])[4]"));
+
+        if (!checkbox3.isSelected()) {
+            checkbox3.click();
+        }
+
+        WebElement checkbox4 = $(By.xpath("(//input[@type='checkbox'])[5]"));
+
+        if (!checkbox4.isSelected()) {
+            checkbox4.click();
+        }
+
+        WebElement checkbox5 = $(By.xpath("(//input[@type='checkbox'])[6]"));
+
+        if (!checkbox5.isSelected()) {
+            checkbox5.click();
+        }
+
+        WebElement concludeSale = $(By.xpath("//button[@type='button']"));
+        concludeSale.click();
+
+        WebElement concludePopUp = $(By.xpath("//button[contains(text(),'Conclude Sale')]"));
+        concludePopUp.click();
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(4));
+        wait.until(ExpectedConditions.stalenessOf(concludePopUp));
+
+
+    }
+
+    @Step("Debi-check page")
+    public void debiCheck()throws InterruptedException{
+        Thread.sleep(13000);
+
+
+        $(By.xpath(ConfirmDebiCheckXpath)).click();
+        Thread.sleep(2000);
+
+
+        $(By.xpath("//span[@class='title'][1]")).click();
+
+
+
+    }
+
+    @Step("View summary table page")
+    public void summaryTable()throws InterruptedException{
+        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+
+        WebElement bootstrap = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SummaryTableXpath)));
+        bootstrap.click();
+
+
+
+    }
+
+
 }
