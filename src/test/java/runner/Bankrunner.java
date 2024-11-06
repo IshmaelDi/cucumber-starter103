@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/SingleGUI/CaptureSalePage.feature",
+        features = "src/test/resources/features/SingleGUI/Banktest.feature",
         glue = "StepDefinitions"
 )
 
-public class CaptureSalePageTest {
+public class Bankrunner {
 }

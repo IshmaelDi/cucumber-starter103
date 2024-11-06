@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.PageObject;
 
-public class CaptureSalePageStep extends PageObject {
+public class Stepsdefbank extends PageObject {
 
     @Steps
     CaptureSalePage captureSalePage;
